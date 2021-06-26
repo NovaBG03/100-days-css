@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+:root {
+  --bg-gradient: linear-gradient(to top right, #43389F 0%, #4ec6ca 100%);
+  --text-color: #fff;
+}
+
+body {
+  font-family: 'Courier New', Courier, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  user-select: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.logo {
+  display: flex;
+}
+
+.digit,
+.digit::before {
+  border-radius: 2px;
+  background: var(--text-color);
+  box-shadow: 0 0 13px 0 rgb(0 0 0 / 20%);
+}
+
+.digit.one {
+  position: relative;
+  height: 100px;
+  width: 24px;
+}
+
+.digit.one::before {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: 20px;
+  transform: translate(-17px, 0.5px) rotate(50deg);
+  z-index: -1;
+}
+
+.digit.zero {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  border: 25px solid var(--text-color);
+  border-radius: 100%;
+  margin-left: -15px;
+}
+
+.logo .digit.zero:last-of-type {
+  z-index: -1;
+}
+
+.title {
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: justify;
+  margin: 0;
+}
+
+.title.big {
+  font-size: 82px;
+  margin-top: -10px;
+}
+
+.title.small {
+  font-size: 23px;
+  letter-spacing: 0.05em;
+  margin-top: -20px;
+}

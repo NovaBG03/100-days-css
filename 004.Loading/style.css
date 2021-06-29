@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+:root {
+    --bg-clr: #E56262;
+    --spinner-clr: #fff;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: var(--bg-clr);
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.white-circle {
+    --size: 60px;
+    position: absolute;
+    top: calc(var(--size) * -0.5);
+    left: calc(var(--size) * -0.5);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 100%;
+    background: var(--spinner-clr);
+}
+
+.white-circle.big {
+    --size: 90px;
+    animation: loading3 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+}
+
+.white-circle.normal {
+    --size: 60px;
+    animation: loading2 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+}
+
+.white-circle.small {
+    --size: 30px;
+    animation: loading1 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+}
+
+@keyframes loading1 {
+    0%, 80% {
+        box-shadow: 2px 2px 3px 2px rgb(0 0 0 / 20%);
+        transform: scale(0);
+    }
+    100% {
+        box-shadow: 10px 10px 15px 0 rgb(0 0 0 / 30%);
+        transform: scale(1);
+    }
+}
+
+@keyframes loading2 {
+    0%, 50% {
+        box-shadow: 2px 2px 3px 2px rgb(0 0 0 / 20%);
+        transform: scale(0);
+    }
+    100% {
+        box-shadow: 10px 10px 15px 0 rgb(0 0 0 / 30%);
+        transform: scale(1);
+    }
+}
+
+@keyframes loading3 {
+    0%, 20% {
+        box-shadow: 2px 2px 3px 2px rgb(0 0 0 / 20%);
+        transform: scale(0);
+    }
+    100% {
+        box-shadow: 10px 10px 15px 0 rgb(0 0 0 / 30%);
+        transform: scale(1);
+    }
+}
